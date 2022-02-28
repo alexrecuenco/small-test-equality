@@ -1,0 +1,6 @@
+// This allows linting all files, including those that are excluded from our typescript compilation
+{
+    "extends": "./tsconfig.json",
+    // WARN: If 'include' is changed on the main config, this file would overwrite it, so you should consider modifying this.
+    "include": ["src/**/*", "bin/**/*", "__tests__/**/*", ".*.js", "*.js"]
+}

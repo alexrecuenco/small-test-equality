@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ghmcadams.lintlens",
+        "visualstudioexptteam.vscodeintellicode",
+        "wix.vscode-import-cost",
+        "pmneo.tsimporter",
+        "orta.vscode-jest"
+    ]
+}

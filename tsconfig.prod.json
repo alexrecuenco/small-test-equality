@@ -1,0 +1,11 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "declaration": false,
+        /* Generates corresponding '.d.ts' file. */
+        "declarationMap": false,
+        "sourceMap": false,
+        "rootDir": ".",
+        "types": ["node"]
+    }
+}
