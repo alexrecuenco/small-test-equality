@@ -1,9 +1,6 @@
 const off = 'off';
-
 const warn = 'warn';
-
 const error = 'error';
-
 const TEST_ONLY_IMPORTS = ['fast-check', 'jest', 'eslint', 'prettier'];
 
 module.exports = {
@@ -30,12 +27,17 @@ module.exports = {
   },
   rules: {
     'import/no-extraneous-dependencies': warn,
-
     // Temporal?
     'no-console': warn,
     'no-return-await': warn,
     'no-unused-vars': off,
     '@typescript-eslint/no-unused-vars': off,
+    'prettier/prettier': [
+      error,
+      {
+        endOfLine: 'auto',
+      },
+    ],
     eqeqeq: [error, 'smart'],
     'no-else-return': [
       error,
@@ -92,12 +94,10 @@ module.exports = {
         '__tests__/**/*.ts',
         'jest.setup.js',
       ],
-
       // https://eslint.org/docs/user-guide/configuring#specifying-environments
       env: {
         jest: true,
       },
-
       // Can't extend in overrides: https://github.com/eslint/eslint/issues/8813
       // "extends": ["plugin:jest/recommended"]
       plugins: ['jest'],
