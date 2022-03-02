@@ -84,4 +84,18 @@ describe('deepEquals', () => {
       expect(await asyncDeepEquals(new Date(), new Date(0))).toBe(false);
     });
   });
+
+  describe('Handcrafted examples', () => {
+    const examples = [
+      [[[]], [[]], true],
+      [[1, { 1: [1] }], [1, { 1: [1] }], true],
+      [[1, { 1: [1] }], [1, { 1: [1] }], true],
+      [[1, 2], [2, 1], false],
+      [[new Date(0), 1], [new Date(0), 2], false],
+      [{ 1: { 1: { 2: 3, 4: 5, 5: 6 } } }, { 1: { 1: { 1: 2 } } }, false],
+    ] as [any, any, boolean][];
+    test.each(examples)('should work for %o and %o, returning %p', async (a: any, b: any, value: boolean) => {
+      await expect(asyncDeepEquals(a, b)).resolves.toBe(value);
+    });
+  });
 });
